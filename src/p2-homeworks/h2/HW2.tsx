@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Affairs from './Affairs'
+import Affair from './Affair';
 
 // types
 export type AffairPriorityType = 'low' | 'high' | 'middle' // need to fix any
@@ -7,7 +8,8 @@ export type AffairType = {
     _id: number
     name: string
     priority: AffairPriorityType
-} // need to fix any
+}// need to fix any
+
 export type FilterType = 'all' | AffairPriorityType
 
 // constants
@@ -28,7 +30,6 @@ export const filterAffairs = (affairs: Array<AffairType>, filter: FilterType): A
 
 export const deleteAffair = (affairs: Array<AffairType>, _id: number): Array<AffairType> => {
     return affairs.filter(f => f._id !== _id)
-
 }
 
 function HW2() {
