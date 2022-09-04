@@ -1,7 +1,67 @@
-.someClass {
+body {
+    background: #e6e0e0;
+}
 
+.div {
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.done {
+    border: 2px solid green;
+    border-radius: 4px;
+    height: 25px;
 }
 
 .error {
-    border: 1px solid red;
+    border: 2px solid red;
+    height: 25px;
+    border-radius: 4px;
 }
+
+.totalUsers {
+    color: #000000;
+}
+
+.textError {
+    color: red;
+    display: block;
+}
+.margin{
+    margin-left: 10px;
+}
+
+
+.button {
+    background: transparent;
+    color: #3bd9d9;
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 5px;
+    border: 2px solid #3bd9d9;
+    border-radius: 5px;
+    transform: translate(0);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    background: #3bd9d9;
+    width: 8px;
+    top: 0;
+    bottom: 0;
+    left: -32px;
+    transform: rotate(-16deg);
+    filter: blur(6px);
+}
+
+.button:hover::before {
+    left: calc(100% + 32px);
+    transition: 0.75s;
+}
+
