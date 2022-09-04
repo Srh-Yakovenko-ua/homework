@@ -18,7 +18,7 @@ const Greeting: React.FC<GreetingPropsType> = (
 
     return (
         <div className={s.div}>
-            <div className={s.margin}>
+            <div className={s.marginLeft}>
                 <input value={name} onChange={setNameCallback} className={inputClass}/>
                 <span className={s.textError}>{error}</span>
             </div>

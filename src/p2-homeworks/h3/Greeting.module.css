@@ -29,7 +29,8 @@ body {
     color: red;
     display: block;
 }
-.margin{
+
+.marginLeft {
     margin-left: 10px;
 }
 

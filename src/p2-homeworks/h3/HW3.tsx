@@ -11,10 +11,9 @@ export type UserType = {
 // уровень работы с глобальными данными
 function HW3() {
     const [users, setUsers] = useState<Array<UserType>>([]) // need to fix any
-     console.log(users)
 
     const addUserCallback = (name: string) => {
-        const fixName = name.split(' ').map(n => n[0].toUpperCase() + n.substring(1).toLowerCase()).join(' ')
+        const fixName = name.split(' ').map(n => n[0].toUpperCase() + n.substring(1).toLowerCase()).join(' ');
         // need to fix any
         setUsers([...users, {_id: v1(), name: fixName}])// need to fix
     }
