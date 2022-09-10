@@ -1,7 +1,6 @@
 .default {
     background: transparent;
     color: #3cd172;
-    font-weight: 400;
     font-size: 12px;
     text-transform: uppercase;
     margin-top: 10px;
@@ -37,8 +36,7 @@
 
 .red {
     background: transparent;
-    color:#3cd172;
-    font-weight: 400;
+    color: burlywood;
     font-size: 12px;
     text-transform: uppercase;
     margin-top: 10px;
