@@ -1,15 +1,15 @@
-.default {
-    color: black;
+.default:disabled {
+    color: gray;
 }
 
 .red {
-    background: red;
+    color: red;
 }
 
 
 .button {
     background: transparent;
-    color: #3bd9d9;
+    color: red;
     font-weight: 400;
     font-size: 12px;
     text-transform: uppercase;
