@@ -3,8 +3,14 @@
 }
 
 .errorInput {
-    border: 3px solid #da3581;
-    background: #bebbd8;
+    border: 2px solid #eb63f7;
+    margin: 5px;
+    width: 200px;
+    padding: 10px 15px;
+    background: #36dcbe;
+    color: #ffffff;
+    border-radius: 10px;
+
 }
 
 .error {

@@ -1,15 +1,6 @@
-.default:disabled {
-    color: gray;
-}
-
-.red {
-    color: red;
-}
-
-
-.button {
+.default {
     background: transparent;
-    color: red;
+    color: #3cd172;
     font-weight: 400;
     font-size: 12px;
     text-transform: uppercase;
@@ -22,7 +13,7 @@
     cursor: pointer;
 }
 
-.button::before {
+.default::before {
     content: '';
     position: absolute;
     background: #3bd9d9;
@@ -34,7 +25,44 @@
     filter: blur(6px);
 }
 
-.button:hover::before {
+.default:hover::before {
+    left: calc(100% + 32px);
+    transition: 0.75s;
+}
+
+.default:disabled {
+    color: gray;
+    cursor: not-allowed;
+}
+
+.red {
+    background: transparent;
+    color:#3cd172;
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    padding: 5px;
+    border: 2px solid #3bd9d9;
+    border-radius: 5px;
+    transform: translate(0);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.red::before {
+    content: '';
+    position: absolute;
+    background: #3bd9d9;
+    width: 8px;
+    top: 0;
+    bottom: 0;
+    left: -32px;
+    transform: rotate(-16deg);
+    filter: blur(6px);
+}
+
+.red:hover::before {
     left: calc(100% + 32px);
     transition: 0.75s;
 }
