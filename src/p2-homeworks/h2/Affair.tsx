@@ -18,7 +18,7 @@ function Affair(props: AffairPropsType) {
     return (
         <div className={s.block}>
             <span >{name}</span>
-            <span> {priority}</span>
+            <span> {`: ${priority}`}</span>
             <button onClick={deleteCallback}>X</button>
         </div>
     )
