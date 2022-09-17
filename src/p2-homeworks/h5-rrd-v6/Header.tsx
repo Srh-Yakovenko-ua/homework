@@ -5,9 +5,9 @@ import {PATH} from './Pages';
 
 function Header() {
 
-    const activeJunior = ({isActive}: any) => isActive ? classes.active : classes.nonActive
-    const activePreJunior = ({isActive}: any) => isActive ? classes.active : classes.nonActive
-    const activeJuniorPlus = ({isActive}: any) => isActive ? classes.active : classes.nonActive
+    const activeJunior = ({isActive}: { isActive: boolean }) => isActive ? classes.active : ''
+    const activePreJunior = ({isActive}: { isActive: boolean }) => isActive ? classes.active : ''
+    const activeJuniorPlus = ({isActive}: { isActive: boolean }) => isActive ? classes.active : ''
 
     return (
         <div className={classes.dropdown}>
