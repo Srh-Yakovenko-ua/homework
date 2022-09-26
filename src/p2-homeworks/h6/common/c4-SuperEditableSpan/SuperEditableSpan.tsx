@@ -1,5 +1,6 @@
 import React, {DetailedHTMLProps, InputHTMLAttributes, HTMLAttributes, useState} from 'react'
 import SuperInputText from '../../../h4/common/c1-SuperInputText/SuperInputText'
+import classes from './SuperEditableSpan.module.css'
 
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
@@ -31,22 +32,23 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
     const {children, onDoubleClick, className, ...restSpanProps} = spanProps || {}
 
     const onEnterCallback = () => {
-        // setEditMode() // выключить editMode при нажатии Enter
+        setEditMode(!editMode) // выключить editMode при нажатии Enter
 
         onEnter && onEnter()
     }
     const onBlurCallback = (e: React.FocusEvent<HTMLInputElement>) => {
-        // setEditMode() // выключить editMode при нажатии за пределами инпута
+        setEditMode(!editMode) // выключить editMode при нажатии за пределами инпута
 
         onBlur && onBlur(e)
     }
     const onDoubleClickCallBack = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
-        // setEditMode() // включить editMode при двойном клике
+        setEditMode(!editMode) // включить editMode при двойном клике
 
         onDoubleClick && onDoubleClick(e)
     }
 
-    const spanClassName = `${'сделать красивый стиль для спана'} ${className}`
+
+    const classNameSpan = `${classes.editeSpan} ${className}`
 
     return (
         <>
@@ -60,15 +62,19 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
                         {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
                     />
                 ) : (
-                    <span
-                        onDoubleClick={onDoubleClickCallBack}
-                        className={spanClassName}
+                    <>
+                        <span
+                            onDoubleClick={onDoubleClickCallBack}
+                            className={classNameSpan}
 
-                        {...restSpanProps}
-                    >
+                            {...restSpanProps}
+                        >
                         {/*если нет захардкодженного текста для спана, то значение инпута*/}
-                        {children || restProps.value}
-                    </span>
+                            {children || restProps.value}
+                        </span>
+                        <span className={classes.hideSpan}>double click to edit text</span>
+                    </>
+
                 )
             }
         </>

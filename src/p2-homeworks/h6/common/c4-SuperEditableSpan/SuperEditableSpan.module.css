@@ -1,0 +1,18 @@
+.editeSpan {
+    display: inline-block;
+    color: #7d41c0;
+    padding: 5px 20px;
+    margin-top: 9px;
+}
+
+.hideSpan {
+    display: none;
+}
+
+.editeSpan:hover + .hideSpan {
+    display: inline;
+    position: absolute;
+    color: red;
+    left: 22px;
+    font-size: 10px;
+}
