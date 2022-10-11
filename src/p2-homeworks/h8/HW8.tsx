@@ -26,7 +26,10 @@ const styleHW8 = {
     paddingLeft : '10px'
 } as const
 
+
+
 function HW8() {
+
     const [people, setPeople] = useState<UserType[]>(initialPeople) // need to fix any
 
 
@@ -38,6 +41,8 @@ function HW8() {
     ))
 
     const sortUp = () => setPeople(homeWorkReducer(initialPeople, {type: 'sort', payload: 'up'}))
+    const sortDown = () => setPeople(homeWorkReducer(initialPeople, {type: 'sort', payload: 'down'}))
+    const sortCheck = () => setPeople(homeWorkReducer(initialPeople, {type: 'check', payload: 18}))
 
     return (
         <div>
@@ -48,8 +53,8 @@ function HW8() {
             {finalPeople}
 
             <SuperButton onClick={sortUp}>sort up</SuperButton>
-            <SuperButton>sort down</SuperButton>
-            <SuperButton>check 18</SuperButton>
+            <SuperButton onClick={sortDown}>sort down</SuperButton>
+            <SuperButton onClick={sortCheck}>check 18</SuperButton>
 
 
             <hr/>
