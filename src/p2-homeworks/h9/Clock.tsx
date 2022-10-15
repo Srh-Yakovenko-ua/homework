@@ -1,32 +1,46 @@
 import React, {useState} from 'react'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
 
+
 function Clock() {
+   // const moment = require('moment');
+
+
+
     const [timerId, setTimerId] = useState<number>(0)
     const [date, setDate] = useState<Date>()
     const [show, setShow] = useState<boolean>(false)
 
     const stop = () => {
-        // stop
+        window.clearInterval(timerId)
     }
     const start = () => {
         stop()
-        const id: number = window.setInterval(() => {
-            // setDate
+        const id = window.setInterval(() => {
+         setDate(new Date())
         }, 1000)
         setTimerId(id)
     }
+    // const start = () => {
+    //     stop()
+    //     const id = window.setInterval(() => {
+    //         let now = moment().format('LTS');
+    //         setDate(now)
+    //     }, 1000)
+    //     setTimerId(id)
+    // }
 
     const onMouseEnter = () => {
-        // show
+        setShow(true)
     }
     const onMouseLeave = () => {
-        // close
+        setShow(false)
     }
 
-    const stringTime = 'Time' // fix with date
-    const stringDate = 'Date' // fix with date
-
+    const stringTime = date?.toLocaleTimeString() // fix with date
+    const stringDate = date?.toLocaleDateString() // fix with date
+    // const stringTime = date;
+    // const stringDate = moment().format('L');
     return (
         <div>
             <div
@@ -37,8 +51,8 @@ function Clock() {
             </div>
 
             {show && (
-                <div>
-                    {stringDate}
+                <div style={{color: 'red'}}>
+                    {`date : ${stringDate}`}
                 </div>
             )}
 
